@@ -1,0 +1,44 @@
+{
+  "name": "haventowernew",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/index.js",
+  "scripts": {
+    "initialbuild": "npm run build:assets && npm run build:initialhtml && npm run build:initialcss && npm run build:initialjs && npm run build:initialwebpack",
+    "build:assets": "mkdir -p assets",
+    "build:initialhtml": "touch index.html",
+    "build:initialcss": "mkdir -p css && touch css/style.scss && touch css/_normalize.scss",
+    "build:initialjs": "mkdir -p js && touch js/index.js",
+    "build:initialwebpack": "touch webpack.config.js",
+    "mkdir": "mkdir -p build",
+    "build": "npm run clean && npm run mkdir && webpack",
+    "watch": "npm run build && webpack --watch",
+    "clean": "rm -rf build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanscottbuchholtz/haventower.git"
+  },
+  "author": "Ryan S. Buchholtz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanscottbuchholtz/haventower/issues"
+  },
+  "homepage": "https://github.com/ryanscottbuchholtz/haventower#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^3.0.1",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "gh-pages": "^0.11.0",
+    "html-webpack-plugin": "^2.21.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "font-awesome-webpack": "0.0.4",
+    "jquery": "^3.0.0"
+  }
+}
